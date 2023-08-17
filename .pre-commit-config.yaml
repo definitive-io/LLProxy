@@ -1,0 +1,19 @@
+# There are many pre-built hooks that can be added.
+# You can see the list here: https://pre-commit.com/hooks.html 
+repos:
+
+  # GitLeaks
+  - repo: https://github.com/zricethezav/gitleaks
+    rev: v8.15.0 # The GitHub action uses `latest` but that isn't supported here
+    hooks:
+      - id: gitleaks
+
+  # Golang precommits
+  - repo: https://github.com/dnephin/pre-commit-golang
+    rev: v0.5.1
+    hooks:
+      - id: go-fmt
+      - id: go-vet
+      - id: go-unit-tests
+      - id: go-build
+      - id: go-mod-tidy

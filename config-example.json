@@ -1,0 +1,36 @@
+{
+    "app": {
+        "port": 8080,
+        "healthPort": 8081
+    },
+    "logging": {
+        "level": "debug",
+        "type": "json"
+    },
+    "routes": {
+        "openai": {
+            "forward": "https://api.openai.com",
+            "provider": "openai",
+            "models": {
+                "gpt-4": {
+                    "maxQueueSize": 10,
+                    "maxQueueWait": 30,
+                    "rpm": 200,
+                    "tpm": 40000
+                },
+                "gpt-3.5-turbo": {
+                    "maxQueueSize": 20,
+                    "maxQueueWait": 30,
+                    "rpm": 3500,
+                    "tpm": 90000
+                },
+                "text-davinci": {
+                    "maxQueueSize": 20,
+                    "maxQueueWait": 30,
+                    "rpm": 3500,
+                    "tpm": 350000
+                }
+            }
+        }
+    }
+}
